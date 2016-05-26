@@ -1,65 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Flagi</title>
-        
-		<style>i {
-    display: block;
-    width: 400px;
-    height: 250px;
-    border: black 1px solid;
-    margin-bottom: 2em
-}
+<head>
+    <title>PONG</title>
 
-#polska {
-    background-image: linear-gradient(white 50%, red 50%)
-}
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <script src="game.js"></script>
+</head>
+<body>
+    <audio id="lobbyAudio" autoplay loop>
+        <source src="audio/lobby.mp3">
+    </audio>
+    <div id="game">
+        <div id="select"><a onclick="playSingiel()" style="color:red">ONE</a> <span style="color:blue">OR</span> <a onclick="playMulti()" style="color:yellow">TWO</a> <span style="color:green">PLAYERS</span><span style="color:red">?</span></div>
 
-#niemcy {
-    background-image: linear-gradient(black 33%, red 33% ,#b90909 66% ,#eded11 66%)
-}
+        <div id="separator"></div>
+        <div id="player1"></div>
+        <div id="player2"></div>
+        <div id="ball"></div>
+        <div id="scoreBoard"><span id="leftScore">0</span><span id="rightScore">0</span></div>
+    </div>
 
-#japonia {
-    background-image: radial-gradient(circle, red 40%, white 40%)
-}
-
-#francja {
-    background-image: -webkit-linear-gradient(left, #1212b2 33% , white 33% , white 66% , #ce1414 66%)
-}
-
-#boliwia {
-    background-image: linear-gradient(red 33%, yellow 33%, yellow 66%, green 66%)
-}
-
-#bangladesz {
-    background-image: -webkit-radial-gradient(circle, red 80px, green 0);
-    background-position: -60px
-}
-
-#hiszpania {
-    background-image: linear-gradient(#c60b1e 20%,#ffc400 20%,#ffc400 80%, #c60b1e 80%)
-}
-
-#kongo {
-    background-image: linear-gradient(-45deg, #dc241f 35%, #fbde4a 35% , #fbde4a 55%, #009543 55%)
-}
-
-#finlandia {
-    background-image: -webkit-linear-gradient(90deg, #003580, #003580), linear-gradient(0deg, #003580, #003580);
-    background-position: 0 0px, 0px 0;
-}
-</style>
-    </head>
-    <body>
-       
-        <i id="polska"></i>
-        <i id="niemcy"></i>
-        <i id="japonia"></i>
-        <i id="francja"></i>
-        <i id="boliwia"></i>
-        <i id="bangladesz"></i>
-        <i id="hiszpania"></i>
-        <i id="kongo"></i>
-        <i id="finlandia"></i>
-    </body>
+    <div id="help">
+        <a>?</a>
+        <p>How to play?</p>
+        <p>To start the game <br>press 1 or 2 or click text</p>
+        <p>Adjust Controls</p>
+    </div>
+</body>
 </html>
