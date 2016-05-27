@@ -20,8 +20,10 @@
                     });
                     FB.getLoginStatus(function(response) {
                         if (response.status === 'connected') {
+                            console.log("connected");
                             document.getElementById("FB").innerHTML = "Welcome Maciek";
                         } else {
+                            console.log("~connected");
                             $("FB>p").html("Login to facebook?");
                         }
                     });
