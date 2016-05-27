@@ -40,23 +40,24 @@ body {
 }
 
 /* TOP MENU*/
-header ul{
+#topBar ul{
     position: fixed;
-    top: 54px;
-    width: 100%;
-    margin: 0;
-    padding:0;
     z-index: 10;
-    list-style: none;
-    text-align: center;
-    border-bottom: solid #6a1616 10px;
+    width: 100%;
+    top: 54px;
+    margin: 0;
     background-color:#ad1111;
+    list-style: none;
+    padding:0;
+    text-align: center;
     transition-duration:.5s;
+    border-bottom: solid #6a1616 10px;
+    border-top: solid #cc3737 10px;
     transform: translateY(-100%) translateY(15px)
 }
-header li{
+#topBar li{
     display: inline-block;
-    line-height: 60px;
+    line-height: 55px;
     height: 50px;
     border-left: dashed;
     padding:0 20px;
@@ -64,7 +65,7 @@ header li{
     box-sizing: border-box;
     transition-duration: .5s;
 }
-header li:first-child{
+#topBar li:first-child{
     border:0;
     margin:0
 }
@@ -74,22 +75,20 @@ li a{
     text-decoration: none;
 }
 li:hover{
-    box-shadow:inset 0 0 0 50px rgba(0,0,0,.2);
+    box-shadow:inset 0 0 0 50px rgba(0,0,0,.2)
 }
-header{
+#topBar{
     position: fixed;
     z-index: 10;
     transition-duration: 1s
 }
-header ul:after{
-    transition-duration:.5s
+.hidden:hover ul:after{
+    transform: rotate(90deg)
 }
-
-header:hover ul{
+#topBar:hover ul{
     transform:translateY(0)
 }
-
-header>a{
+#topBar>a{
     display: block;
     position: absolute;
     line-height: 60px;
@@ -100,12 +99,62 @@ header>a{
     color: inherit;
     transition-duration: .2s
 }
-header>a:hover{
+#topBar>a:hover{
     transform: translateX(-5px)
+}
+
+h1{
+    text-align:center;
+    margin-top:15px
 }
 
 b {
     font-weight: inherit;
     position: relative;
     top: 0.2em
+}
+
+footer{
+    position: fixed;
+    bottom:0;
+    width:100%;
+    text-align: center;
+    transition-duration: .5s;
+    transform: translateY(100%);
+    border:solid
+}
+footer:hover{
+    transform: translateY(0);
+    z-index: 100
+}
+footer>a{
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: -56px;
+    line-height:50px;
+    width: 50px;
+    transition-duration:.1s
+}
+footer>a{
+    background-color: inherit;
+    border:inherit;
+    border-bottom:solid transparent;
+}
+
+footer:hover .rotate:after{
+    transform: rotate(-90deg);
+    left: 10px;
+}
+footer .rotate:after{
+    position: absolute;
+    content: "<";
+    transform: rotate(90deg);
+    border-radius: 100%;
+    background-color: inherit;
+    line-height: 30px;
+    width: 30px;
+    left: 8px;
+    top: 10px;
+    transition-duration: .3s
 }
