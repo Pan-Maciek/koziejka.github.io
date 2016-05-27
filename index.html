@@ -20,7 +20,7 @@
                     });
                     FB.getLoginStatus(function(response) {
                         if (response.status === 'connected') {
-                            $("FB>p").html("Welcome " + "Maciek");
+                            document.getElementById("FB").innerHTML = "Welcome Maciek";
                         } else {
                             $("FB>p").html("Login to facebook?");
                         }
