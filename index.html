@@ -3,23 +3,62 @@
     <head>
         <title>8 BIT GAMES</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="images/Bez-nazwy-3.gif" sizes="144x144">
+        <link rel="icon" href="images/logo.gif">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
         <link rel="stylesheet" href="css/default.css">
-        
+
         <script src="js/jquery.js"></script>
+        <script src="js/fb.js"></script>
     </head>
     <body>
+        <script>
+            window.fbAsyncInit = function() {
+                    FB.init({
+                    appId      : '1727571490814573',
+                    xfbml      : true,
+                    version    : 'v2.6'
+                    });
+                    FB.getLoginStatus(function(response) {
+                        if (response.status === 'connected') {
+                            $("FB>p").html("Welcome " + "Maciek");
+                        } else {
+                            $("FB>p").html("Login to facebook?");
+                        }
+                    });
+                };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         
-        <header>
+        <div id="topBar">
             <h1 id="logo"><a></a></h1>
             <ul>
                 <li><a href="about.html">ABOUT ME</a></li>
                 <li><a href="#">MY PROJECTS</a></li>
                 <li><a href="#">DONATE ?</a></li>
             </ul>
-        </header>
+        </div>
+
+        <div id="games">
         
+        </div>
+        
+        <footer style="border-color:#9d2424;background-color:#e03d3d">
+            <a class="rotate">a</a>
+            <p>WEBSITE CREATED BY MACIEJ KOZIEJA &copy;</p>
+        </footer>
+        
+        <footer style="border-color:#253a67;background-color:#3b5998">
+            <a style="right:80px">f</a>
+            <div id="FB">
+                <p style="cursor:pointer" onclick="login()"></p>
+            </div>
+        </footer>
     </body>
 </html>
