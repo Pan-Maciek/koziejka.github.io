@@ -12,23 +12,23 @@
     </head>
     <body>
         <script>
-            console.log("start");
             window.fbAsyncInit = function() {
-                    FB.init({
-                    appId      : '1727571490814573',
-                    xfbml      : true,
-                    version    : 'v2.6'
-                    });
-                    FB.getLoginStatus(function(response) {
-                        if (response.status === 'connected') {
-                            console.log("connected");
-                            document.getElementById("FB").innerHTML = "Welcome Maciek";
-                        } else {
-                            console.log("~connected");
-                            $("FB>p").html("Login to facebook?");
-                        }
-                    });
-                };
+                FB.init({
+                appId      : '1727571490814573',
+                xfbml      : true,
+                version    : 'v2.6'
+                });
+                FB.getLoginStatus(function(response) {
+            	if (response.status === 'connected') {
+            		document.getElementById('status').innerHTML = 'We are connected.';
+            		document.getElementById('login').style.visibility = 'hidden';
+            	} else if (response.status === 'not_authorized') {
+            		document.getElementById('status').innerHTML = 'We are not logged in.'
+            	} else {
+            		document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+            	}
+            });
+            };
 
             (function(d, s, id){
                 var js, fjs = d.getElementsByTagName(s)[0];
@@ -37,7 +37,25 @@
                 js.src = "//connect.facebook.net/en_US/sdk.js";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-            console.log("end");
+
+            function login() {
+			FB.login(function(response) {
+				if (response.status === 'connected') {
+		    		document.getElementById('status').innerHTML = 'We are connected.';
+		    		document.getElementById('login').style.visibility = 'hidden';
+		    	} else if (response.status === 'not_authorized') {
+		    		document.getElementById('status').innerHTML = 'We are not logged in.'
+		    	} else {
+		    		document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+		    	}
+			}, {scope: 'email'});
+		}
+
+        function getInfo() {
+			FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+				document.getElementById('status').innerHTML = response.first_name;
+			});
+		}
         </script>
         
         <div id="topBar">
