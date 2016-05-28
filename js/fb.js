@@ -10,8 +10,7 @@ $(document).ready(function(){
         if(r.status === 'connected'){
             FB.api('/me', 'GET', {fields: 'name,picture'}, function(response) {
                 console.log(response);
-                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'>" + response.name);
-                $(".hidden").removeAttr("hidden")
+                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'>" + response.name).removeClass("hidden");
             });
         }
     });
