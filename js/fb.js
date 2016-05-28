@@ -4,6 +4,7 @@ $(document).ready(function(){
     console.log("gyuguugg");
     $("#FBinfo").html("<p>Login to facebook?</p>");
     $("#FBinfo p").on("click",login);
+    $("#FBinfo p").css("cursor","pointer");
 });
 function login() {
     FB.login(function(response) {
