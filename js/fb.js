@@ -11,9 +11,10 @@ $(document).ready(function(){
             FB.api('/me', 'GET', {fields: 'name,picture'}, function(response) {
                 console.log(response);
                 $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'><p>" + response.name + "</p>").removeClass("hidden");
-                console.log($("#FBinfo").parent().children("a").children("div").children("p"));
+                
                 if (response.name.length > 10){
-                    $("#FBinfo").parent().children("a").children("div").children("p").css("animation: textSlide 15s infinite;");
+                    console.log("abc");
+                    $("#FBinfo").parent().children("a").children("div").children("p").css("animation", "textSlide 15s infinite;");
                 }
             });
         }
