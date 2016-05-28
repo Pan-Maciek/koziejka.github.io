@@ -11,7 +11,7 @@ function login() {
     FB.login(function(response) {
         if (response.status === 'connected') {
             getInfo();
-            $("#FBinfo").html("<p>Welcome "+ _name"</p>");
+            $("#FBinfo").html("<p>Welcome " + _name + ".</p>");
         }
     }, {scope: 'email'});
 }
