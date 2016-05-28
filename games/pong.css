@@ -1,0 +1,67 @@
+#game {
+    position: fixed;
+    height:90%;
+    top:5%;
+    border: solid 5px;
+}
+
+canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#menu {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-size: 1.5em;
+    animation: menu 1s infinite;
+    line-height: 70px;
+    background-color: rgba(0,0,0,.5);
+    top: Calc(50% - 35px);
+    border-bottom: solid #000 5px;
+    border-top: solid #000 5px;
+    transition-duration: .5s
+}
+@keyframes menu{
+    50%{
+        font-size: 2em;
+        -webkit-filter: grayscale(55%);
+        filter: grayscale(55%)
+    }
+}
+
+#score{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    left: Calc(50% - 75px);
+}
+
+#score p{
+    position: absolute;
+    margin: 0;
+    line-height: 50px;
+    width: 55px;
+    text-align: center;
+}
+
+#leftScore {
+    left: 0;
+}
+
+#rightScore {
+    right: 0;
+}
+
+#mid {
+    position: absolute;
+    height: 100%;
+    border-left: 5px dashed;
+    left: Calc(50% - 2.5px);
+}
+.playing #menu{
+    transform: translateY(100%);
+    opacity: 0
+}
