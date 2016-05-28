@@ -8,9 +8,9 @@ $(document).ready(function(){
     $("#FBinfo p").css("cursor","pointer");
     FB.getLoginStatus(function(r){
         if(r.status === 'connected'){
-            FB.api('/me', 'GET', {fields: 'name,picture'}, function(response) {
+            FB.api('/me', 'GET', {fields: 'name,picture,id'}, function(response) {
                 console.log(response);
-                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'><p>" + response.name + "</p>").removeClass("hidden");
+                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'><p><a href='" + response.id +  "'" + response.name + "</p>").removeClass("hidden");
                 if (response.name.length > 17){
                     $("#FBinfo").parent().children("a").children("div").children("p").css("animation", "textSlide 15s infinite");
                 }
