@@ -203,3 +203,11 @@ footer>a p{
     50%{transform: translateX(50%)}
     100%{transform: translateX(-50%)}
 }
+footer>a a{
+    color: inherit;
+    text-decoration: none;
+}
+footer>a a:hover{
+    color: lightgray;
+    text-decoration: none;
+}
