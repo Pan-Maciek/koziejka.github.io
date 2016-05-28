@@ -1,6 +1,7 @@
 var ready = $(document).ready;
 $(document).ready(function(){
     ready();
+    console.log("gyuguugg");
     $("FBinfo").html("Zaloguj się ... ");
 });
 function login() {
