@@ -12,7 +12,7 @@ $(document).ready(function(){
                 console.log(response);
                 $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'><p>" + response.name + "</p>").removeClass("hidden");
                 console.log($("#FBinfo").parent().children("a").children("div").children("p"));
-                if ($("#FBinfo").parent().children("a").children("div").children("p").outerWidth() > 275){
+                if (response.name.length > 10){
                     $("#FBinfo").parent().children("a").children("div").children("p").css("animation: textSlide 15s infinite;");
                 }
             });
