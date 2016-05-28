@@ -174,7 +174,9 @@ footer>a>div{
 }
 footer>a>div>img{
     position: absolute;
-    left: 0;
+    left: -3px;
+    top:-3px;
+    z-index:200;
 }
 footer:hover>a>div{
     right: 60px;
