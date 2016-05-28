@@ -7,16 +7,17 @@ figure{
   width:250px;
   height:250px;
   position:relative;
+  overflow:hidden;
 }
 figcaption{
   position:absolute;
   bottom:0;
   width:100%;
   line-height:3em;
-  background-color: rgba(0,0,0,.2);
-  transform: translateY(100%);
-  transition-duration: .5s;
+  background-color:rgba(0,0,0,.2);
+  transform:translateY(100%);
+  transition-duration:.5s;
 }
 figure:hover figcaption{
-  transform:  translateY(0);
+  transform:translateY(0);
 }
