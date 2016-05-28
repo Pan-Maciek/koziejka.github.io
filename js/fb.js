@@ -11,7 +11,7 @@ function login() {
     FB.login(function(response) {
         if (response.status === 'connected') {
             getInfo();
-            $("#FBinfo").html("<p>Welcome " + _name + ".</p>");
+            $("#FBinfo").html("<p>Welcome <span id='imie'>" + _name + "</span>.</p>");
         }
     }, {scope: 'email'});
 }
@@ -19,5 +19,6 @@ function login() {
 function getInfo() {
     FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
         _name = name;
+        $("#imie").html(name);
     });
 }
