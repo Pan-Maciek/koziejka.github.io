@@ -158,3 +158,29 @@ footer .rotate:after{
     top: 10px;
     transition-duration: .3s
 }
+
+footer>a>div{
+    position: absolute;
+    z-index: -1;
+    transition-duration: .5s;
+    background-color: inherit;
+    border: inherit;
+    width: 400px;
+    height: 50px;
+    right: -3px;
+    top: -3px;
+    max-width: 50px;
+    overflow: hidden
+}
+footer>a>div>img{
+    position: absolute;
+    left: 0;
+}
+footer:hover>a>div{
+    right: 60px;
+    max-width: 600px
+}
+footer .hidden{
+    max-width: 0 !important;
+    border: none
+}
