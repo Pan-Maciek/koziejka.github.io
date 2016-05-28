@@ -22,7 +22,7 @@
     color: transparent;
     background-color: inherit;
     border: #6a1616 solid 10px;
-    border-top: #ad1111 solid 10px;
+    border-top: #6a1616 dotted 10px;
     right: 10px;
     line-height: 50px;
     bottom: -70px;
@@ -40,6 +40,30 @@
     transform: rotate(-90deg);
     transition-duration: .5s
 }
+#topBar ul li:last-child:after{
+    height: 10px;
+    width: 50px;
+    position: absolute;
+    display: block;
+    content: ".";
+    color: transparent;
+    background-color:#ad1111;
+    right: 20px;
+    bottom: -10px
+}
 #topBar:hover ul:after{
     transform: rotate(90deg) translateY(2px);
+}
+#logo p{
+    position: absolute;
+    font-size: .75em;
+    font-weight: normal;
+    top: 0;
+    margin: 0;
+    width: 60px;
+    transition-duration: .5s
+}
+
+#logo p:hover{
+    transform: translateX(-8px)
 }
