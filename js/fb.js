@@ -11,7 +11,7 @@ $(document).ready(function(){
             $("#FBinfo").parent().children("a").children("div").removeAttr("hidden");
             FB.api('/me', 'GET', {fields: 'name,picture'}, function(response) {
                 console.log(response);
-                //$("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.src + "'>" + response.name);
+                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'>" + response.name);
             });
         }
     });
