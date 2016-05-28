@@ -14,9 +14,9 @@ figcaption{
   width:100%;
   line-height:3em;
   background-color: rgba(0,0,0,.2);
-  transform:translateY(100%);
+  transform: translateY(100%);
   transition-duration: .5s;
 }
 figure:hover figcaption{
-  transform:translateY(0);
+  transform:  translateY(0);
 }
