@@ -184,3 +184,19 @@ footer .hidden{
     max-width: 0 !important;
     border: none
 }
+footer>a p{
+    z-index: -1;
+    transition-duration: .5s;
+    background-color: inherit;
+    margin: 0;
+    max-height: 50px;
+    word-break: keep-all;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+@keyframes textSlide{
+    0%{transform: translateX(-50%)}
+    50%{transform: translateX(50%)}
+    100%{transform: translateX(-50%)}
+}
