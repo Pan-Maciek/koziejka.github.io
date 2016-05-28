@@ -177,6 +177,7 @@ footer>a>div>img{
     left: -3px;
     top:-3px;
     z-index:200;
+    border:inherit;
 }
 footer:hover>a>div{
     right: 60px;
