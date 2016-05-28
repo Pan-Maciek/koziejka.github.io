@@ -10,6 +10,7 @@ $(document).ready(function(){
         if(r.status === 'connected'){
             $("#FBinfo").parent().children("a").children("div").removeAttr("hidden");
             FB.api('/me', 'GET', {fields: 'name,picture'}, function(response) {
+                console.log(response);
                 $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.src + "'>" + response.name);
             });
         }
