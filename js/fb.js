@@ -1,17 +1,16 @@
 var ready = $(document).ready;
 $(document).ready(function(){
     ready();
-    
+    $("FBinfo").html("Zaloguj się ... ");
 });
 function login() {
     FB.login(function(response) {
         if (response.status === 'connected') {
-            document.getElementById('status').innerHTML = 'We are connected.';
-            document.getElementById('login').style.visibility = 'hidden';
+            $("FBinfo").html('We are connected.');
         } else if (response.status === 'not_authorized') {
-            document.getElementById('status').innerHTML = 'We are not logged in.'
+            $("FBinfo").html('We are not logged in.');
         } else {
-            document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+            $("FBinfo").html('You are not logged into Facebook.');
         }
     }, {scope: 'email'});
 }
