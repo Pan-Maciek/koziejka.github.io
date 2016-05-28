@@ -10,6 +10,7 @@ $(document).ready(function(){
         if(r.status === 'connected'){
             $("#FBinfo .hidden").removeAttr("hidden");
             console.log("conected");
+            console.log($("#FBinfo .hidden"));
         }
     });
 });
