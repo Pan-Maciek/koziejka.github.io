@@ -6,4 +6,11 @@ figure{
   border:solid;
   width:250px;
   height:250px;
+  position:relative;
+}
+figcaption{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  line-height:3em;
 }
