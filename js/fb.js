@@ -8,9 +8,10 @@ $(document).ready(function(){
     $("#FBinfo p").css("cursor","pointer");
     FB.getLoginStatus(function(r){
         if(r.status === 'connected'){
-            $("#FBinfo .hidden").removeAttr("hidden");
-            console.log("conected");
-            console.log($("#FBinfo .hidden"));
+            $("#FBinfo").parent().children("a").children("div").removeAttr("hidden");
+            FB.api('/me', 'GET', {fields: 'name,picture'}, function(response) {
+                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.src "'>" + response.name);
+            });
         }
     });
 });
