@@ -28,7 +28,7 @@ body {
     color: #1f1f1f;
     font-size:.65em
 }
-#logo a{
+#logo>a{
     height: 70px;
     width: 70px;
     background-image: url(../images/logo.gif);
@@ -37,6 +37,10 @@ body {
     position: absolute;
     left:Calc(50% - 160px);
     top: -9px;
+}
+#logo a{
+    color:#fff;
+    text-decoration:none;
 }
 
 /* TOP MENU*/
