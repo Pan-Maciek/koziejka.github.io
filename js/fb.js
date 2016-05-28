@@ -6,6 +6,12 @@ $(document).ready(function(){
     $("#FBinfo").html("<p>Login to facebook?</p>");
     $("#FBinfo p").on("click",login);
     $("#FBinfo p").css("cursor","pointer");
+    FB.getLoginStatus(function(r){
+        if(r.status === 'connected'){
+            $("#FBinfo .hidden").removeAttr("hidden");
+            console.log("conected");
+        }
+    });
 });
 function login() {
     FB.login(function(response) {
