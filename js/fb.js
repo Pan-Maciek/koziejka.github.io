@@ -18,7 +18,7 @@ function login() {
 
 function getInfo() {
     FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
-        _name = name;
+        _name = response.name;
         $("#imie").html(name);
     });
 }
