@@ -10,7 +10,10 @@ $(document).ready(function(){
         if(r.status === 'connected'){
             FB.api('/me', 'GET', {fields: 'name,picture'}, function(response) {
                 console.log(response);
-                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'>" + response.name).removeClass("hidden");
+                $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'><p>" + response.name + "</p>").removeClass("hidden");
+                if ($("#FBinfo").parent().children("a").children("div").children("p").outerWidth() > 275){
+                    $("#FBinfo").parent().children("a").children("div").children("p").css("animation: textSlide 15s infinite;");
+                }
             });
         }
     });
