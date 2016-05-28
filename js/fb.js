@@ -13,8 +13,8 @@ $(document).ready(function(){
                 $("#FBinfo").parent().children("a").children("div").html("<img src='" + response.picture.data.url + "'><p>" + response.name + "</p>").removeClass("hidden");
                 if (response.name.length > 17){
                     $("#FBinfo").parent().children("a").children("div").children("p").css("animation", "textSlide 15s infinite");
-                    $("#FBinfo").html("<p></p>")
                 }
+                $("#FBinfo").html("<p></p>");
             });
         } else {
             $("#FBinfo").html("<p onclick='login()'>Login to facebook?</p>")
