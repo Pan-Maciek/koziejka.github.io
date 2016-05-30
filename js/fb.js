@@ -27,7 +27,7 @@ function login() {
             getInfo();
             $("#FBinfo").html("<p>Welcome <span id='imie'>" + _name + "</span>.</p>");
         }
-    }, {scope: 'email,publish_actions'});
+    }, {scope: 'email,publish_actions,user_friends '});
 }
 
 function getInfo() {
