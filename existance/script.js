@@ -42,7 +42,7 @@ function changeNum(el, num){
     o.text(n.text())
     n.text(num).css("top","100%")
     setTimeout(function(){
-        o.animate({top: "-100%"}, function(){o.css("top", 0)})
+        o.animate({top: "-100%"}, function(){o.css("top", 0).text(n.text())})
         n.animate({top: 0}, 500)
     }, 100)    
         
