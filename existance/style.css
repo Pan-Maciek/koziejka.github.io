@@ -1,5 +1,6 @@
 body{
-    font-family: "consolas"
+    font-family: "consolas";
+    text-align: center
 }
 
 .num {
@@ -21,7 +22,7 @@ body{
 }
 #timer {
     position: fixed;
-    top: 50px;
+    top: 80px;
     left: 50%;
     transform: translate(-50%);
     margin: 0
@@ -29,4 +30,10 @@ body{
 .num:nth-child(3n){
     margin-right: 10px;
     border-right: dashed 1px
+}
+input {
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, -50%)
 }
