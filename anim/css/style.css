@@ -4,7 +4,6 @@ body{
     height: 100%;
     position: fixed;
     width: 100%;
-    background-color: #63ab72;
     font-family: "consolas", sans-serif
 }
 #container{
@@ -13,21 +12,17 @@ body{
 }
 #container>ul{
     list-style: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    margin: 0;
     text-align: center;
-    width: 100%;
-    padding: 0;
+    padding: 0
 }
 #container>ul>li{
     position: fixed;
     top: 50%;
     left: 100%;
-    transform: translate(0,-50%);
-    transition-duration: 1.5s
+    transition-duration: 1.5s;
+    width: 100px;
+    height: 100px;
+    transform: translate(100%, -50%)
 }
 .code{
     color: rgba(0,0,0,0.1);
@@ -70,7 +65,17 @@ body{
     opacity: .5;
     position: relative;
     cursor: pointer;
+    left: 10px;
+    -webkit-user-select: none;
+    user-select: none;
+    transition-duration: .2s
 }
+
+#list li:hover{
+    transform: scale(1.1);
+    opacity: .7
+}
+
 .moveL::before{
     content: "";
     position: absolute;
@@ -114,22 +119,26 @@ body{
         right: -20px;
     }
 }
-#arrowL{
+#arrowL, #arrowR{
     position: fixed;
-    left: 10px;
     top: 50%;
     cursor: pointer;
-    transition-duration: .5s
+    transition-duration: .5s;
+    -webkit-user-select: none;
+    user-select: none
+}
+#arrowL {
+    left: 10px;
 }
 #arrowR {
-    position: fixed;
     right: 10px;
-    top: 50%;
-    cursor: pointer;
-    transition-duration: .5s
 }
 #arrowL polygon, #arrowR polygon {
     fill: #f1f1f1
+}
+
+#arrowL:hover, #arrowR:hover {
+    transform: scale(1.2)
 }
 
 #codeView{
@@ -165,6 +174,9 @@ body{
     font-weight: bold;
     color: rgba(0,0,0,.5);
     border-top: solid #e0e0e0 9px;
+    transition-duration: .5s;
+    -webkit-user-select: none;
+    user-select: none
 }
 
 #codeView ol{
@@ -188,34 +200,36 @@ body{
     border-top: none;
     box-sizing: border-box;
     border-bottom: none;
-    color: #fff;
-    padding: 20px 0 0 20px;
+    color: #b3b3b3;
+    padding: 20px;
     font-family: "consolas", sans-serif;
     font-size: 18px;
     counter-reset: line;
-    overflow-y: scroll
+    overflow-y: scroll;
+    display: none;
+    font-weight: bold;
 }
 
 .html b{
     color:#4d8ac4;
-    font-weight: normal
 }
 .html u{
     color:#729db3;
-    font-weight: normal;
     text-decoration: none
 }
 
 .html i{
-    color:#906a59;
+    color:#a57d6b;
+    font-style: normal
 }
 
 code span{
     position: relative;
-    padding:0 20px;
+    padding:0 45px;
     counter-increment: line;
-    white-space: pre-line;
-    display: block
+    white-space: pre-wrap;
+    display: block;
+    min-height: 22px;
 }
 
 code span::before{
@@ -223,32 +237,112 @@ code span::before{
     color: #464646;
     margin-right: 10px;
     padding-right: 10px;
-    border-right: 1px solid;
+    /*border-right: 1px solid;*/
     height: 100%;
+    position: absolute;
+    left: 0;
+    text-align: right;
+    width: 20px;
+    user-select: none;
+    -webkit-user-select: none
 }
+
+.css u{
+    color:#7badc4;
+    text-decoration: none
+}
+
+.css i{
+    color:#936a59;
+    font-style: normal
+}
+.css a{
+    color:#a3bc90;
+}
+
+.css b{
+    color: #aba06e
+}
+
+.color {
+    position: relative;
+    padding-left: 30px
+}
+
+.color b{
+    width: 15px;
+    height: 15px;
+    border: solid 2px #a9a9a9;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition-duration: .5s;
+}
+#wip{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    color: rgba(0,0,0,0.15);
+}
+
+.color b:hover {
+    transform: scale(2.5) translateY(-25%);
+    transform-origin: center center;
+    z-index: 20000
+}
+
+code::-webkit-scrollbar {
+    width: 20px;
+    border-left: solid 2px #4b4b4b
+}
+
+code::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.2);
+    width: 18px
+}
+code::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,255,255,.1);
+}
+
 
 @media screen and (max-width: 600px) {
     #codeView {
-        width: 100%;
-        left: 0;
-        transform: translate(0,100%)
+        width: 100%
     }
 }
 
-h1{
-    color: #f1f1f1;
+#hidenList {
+    padding: 0;
+    top: 50%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -100;
+    margin: 0;
     text-align: center
 }
 
-/*.toList>li{
-    position:relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    display: inline-block !important;
-    transform: translate(0,0) scale(.5)!important;
-    margin: -20px
+#hidenList li{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 8px
 }
-#list.toList{
-    transform: translate(-50%, 100%) !important;
-    opacity: 0
-}*/
+
+.list{
+    transform: translate(0,0) !important;
+    height: 50px !important;
+    width: 50px !important
+}
+
+
+.list .body{
+    transform: translate(-25%, -25%) scale(.5)
+}
+
+.list .code{
+    display: none
+}
