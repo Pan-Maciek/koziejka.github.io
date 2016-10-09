@@ -8,11 +8,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="js/anim.js"></script>
         <script src="js/default.js"></script>
     </head>
     <body>
-        <h1>Strona w bodowie</h1>
         <div id="container">
             <ul>
                 <li style="left:50%;transform:translate(-50%,-50%)">
@@ -62,75 +60,281 @@
                         <div id="anim6"></div>
                     </div>
                 </li>
+                <li>
+                    <div class="body">
+                        <div id="anim7"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="body">
+                        <h1 id="wip">work<br>in<br>progres</h1>
+                    </div>
+                </li>
             </ul>
         </div>
         <svg id="arrowL" width="30px" height="30px">
             <polygon points="25.427,7.503 18.354,0.431 11.278,7.509 11.263,7.493 4.191,14.565 18.334,28.708 25.404,21.636 18.35,14.58"/>
         </svg>
-        <svg id="arrowR" width="30px" height="30px">
+        <svg id="arrowR" style="transform:translate(200%)" width="30px" height="30px">
             <polygon points="4.191,21.636 11.264,28.708 18.34,21.63 18.355,21.646 25.427,14.573 11.284,0.431 4.214,7.503 11.269,14.559"/>
         </svg>
         <ul id="list"></ul>
+
+        <ul id="hidenList"></ul>
+
         <div id="codeView">
             <header>
-                <div>HTML</div>
+                <div style="border-left:solid 9px #e0e0e0;box-sizing:border-box">HTML</div>
                 <div style="background-color:#c2c2c2;width:Calc(50% - 52px);">CSS</div>
-                <div style="position:absolute;right:0;top:0;width:53px">x</div>
+                <div style="position:absolute;right:0;top:0;width:53px;line-height:44px;border:none">x</div>
             </header>
             <ol>
                 <li>
-<code class="css">
-    css
-</code>
-<code class="html"><span><b>&lt;div <u>class=<i>"anim"</i></u>&gt;</b><b>&lt;/div&gt;</b></span></code>
+                    <code class="css">
+                        <span><b>.anim</b> {</span>
+                        <span>    <u>position</u>: <i>absolute</i>;</span>
+                        <span>    <u>width</u>: <a>50%</a>;</span>
+                        <span>    <u>height</u>: <a>50%</a>;</span>
+                        <span>    <u>top</u>: <a>25%</a>;</span>
+                        <span>    <u>left</u>: <a>25%</a>;</span>
+                        <span>    <u>background-color</u>: <a class="color">#f1f1f1</a>;</span>
+                        <span>    <u>animation</u>: <a>anim1 1.5s</a> <i>infinite ease-in-out</i></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>@keyframes anim</b> {</span>
+                        <span>    0% {</span>
+                        <span>        <u>transform</u>: <i>perspective(<a>120px</a>)</i></span>
+                        <span>    }</span>
+                        <span>    50% {</span>
+                        <span>        <u>transform</u>: <i>perspective(<a>120px</a>)</i> <i>rotateY(<a>-180deg</a>)</i> <i>rotate(<a>90deg</a>)</i></span>
+                        <span>    }</span>
+                        <span>    100% {</span>
+                        <span>        <u>transform</u>: <i>perspective(<a>120px</a>)</i> <i>rotateY(<a>-180deg</a>)</i> <i>rotateX(<a>-180deg</a>)</i> <i>rotate(<a>90deg</a>)</i></span>
+                        <span>    }</span>
+                        <span>}</span>
+                    </code>
+                    <code class="html">
+                        <span><b>&lt;div <u>class=<i>"anim"</i></u>&gt;</b><b>&lt;/div&gt;</b></span>
+                    </code>
                 </li>
                 <li>
-<code class="css">
-    css
-</code>
-<code class="html">
-<span><b>&lt;ul <u>class=<i>"anim"</i></u>&gt;</b><b>&lt;/div&gt;</b></span>
-<span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
-<span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
-<span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
-<span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
-<span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
-<span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
-<span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
-<span><b>&lt;/ul&gt;</b></span>
-</code>
+                    <code class="css">
+                        <span><b>.anim</b> {</span>
+                        <span>    <u>position</u>: <i>absolute</i>;</span>
+                        <span>    <u>width</u>: <a>100%</a>;</span>
+                        <span>    <u>height</u>: <a>100%</a>;</span>
+                        <span>    <u>top</u>: <a>0</a>;</span>
+                        <span>    <u>left</u>: <a>0</a>;</span>
+                        <span>    <u>padding</u>: <a>0</a>;</span>
+                        <span>    <u>text-align</u>: <i>center</i></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>.anim>li</b> {</span>
+                        <span>    <u>background-color</u>: <a class="color">#f1f1f1</a>;</span>
+                        <span>    <u>height</u>: <a>44px</a>;</span>
+                        <span>    <u>width</u>: <a>6px</a>;</span>
+                        <span>    <u>display</u>: <i>inline-block</i>;</span>
+                        <span>    <u>margin-top</u>: <a>Calc(50% - 22px)</a>;</span>
+                        <span>    <u>animation</u>: <a>anim 1.2s</a> <i>infinite ease-in-out</i></span>
+                        <span>}</span>
+                        <span><b>.anim li:nth-child(1)</b>{ <u>animation-delay</u>: <a>-1.1s</a> } </span>
+                        <span><b>.anim li:nth-child(2)</b>{ <u>animation-delay</u>: <a>-1.0s</a> } </span>
+                        <span><b>.anim li:nth-child(3)</b>{ <u>animation-delay</u>: <a>-0.9s</a> } </span>
+                        <span><b>.anim li:nth-child(4)</b>{ <u>animation-delay</u>: <a>-0.8s</a> } </span>
+                        <span><b>.anim li:nth-child(5)</b>{ <u>animation-delay</u>: <a>-0.7s</a> } </span>
+                        <span><b>.anim li:nth-child(6)</b>{ <u>animation-delay</u>: <a>-0.6s</a> } </span>
+                        <span><b>.anim li:nth-child(7)</b>{ <u>animation-delay</u>: <a>-0.5s</a> } </span>
+                        <span></span>
+                        <span><b>@keyframes anim</b> {</span>
+                        <span>    0%, 40%, 100%{</span>
+                        <span>        <u>transform</u>: <i>scaleY(<a>0.4</a>)</i></span>
+                        <span>    }</span>
+                        <span>    100% {</span>
+                        <span>        <u>transform</u>: <i>scaleY(<a>1</a>)</i></span>
+                        <span>    }</span>
+                        <span>}</span>
+                    </code>
+                    <code class="html">
+                        <span><b>&lt;ul <u>class=<i>"anim"</i></u>&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span><b>&lt;/ul&gt;</b></span>
+                    </code>
                 </li>
                 <li>
-<code class="css">
-    css
-</code>
-<code class="html">
-    html
-</code>
+                    <code class="css">
+                        <span><b>.anim </b> {</span>
+                        <span><u>    position</u>:<i> relative</i>;</span>
+                        <span><u>    list-style</u>:<i> none</i>;</span>
+                        <span><u>    width</u>:<a> 100%</a>;</span>
+                        <span><u>    height</u>:<a> 100%</a>;</span>
+                        <span><u>    padding</u>:<a> 0</a>;</span>
+                        <span><u>    margin</u>:<a> 0</a>;</span>
+                        <span><u>    transform</u>:<i> scale(<a>0.4</a>) rotateZ(<a>45deg</a>)</i></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>.anim li </b> {</span>
+                        <span><u>    float</u>:<i> left</i>;</span>
+                        <span><u>    width</u>:<a> 50%</a>;</span>
+                        <span><u>    height</u>:<a> 50%</a>;</span>
+                        <span><u>    position</u>:<i> relative</i>;</span>
+                        <span><u>    transform</u>:<i> scale(<a>1.1</a>)</i></span>
+                        <span>}</span>
+                        <span><b>.anim li:before </b> {</span>
+                        <span><u>    content</u>:<i> ""</i>;</span>
+                        <span><u>    position</u>:<i> absolute</i>;</span>
+                        <span><u>    top</u>:<a> 0</a>;</span>
+                        <span><u>    left</u>:<a> 0</a>;</span>
+                        <span><u>    width</u>:<a> 100%</a>;</span>
+                        <span><u>    height</u>:<a> 100%</a>;</span>
+                        <span><u>    background-color</u>:<a class="color"> #f1f1f1</a>;</span>
+                        <span><u>    animation</u>:<a> anim 2.4s</a> <i>infinite linear</i>;</span>
+                        <span><u>    transform-origin</u>:<i> right bottom</i></span>
+                        <span>}</span>
+                        <span><b>.anim li:nth-child(2)</b> { <u>transform</u>: <i>scale(<a>1.1</a>) rotateZ(<a>90deg</a>)</i> }</span>
+                        <span><b>.anim li:nth-child(4)</b> { <u>transform</u>: <i>scale(<a>1.1</a>) rotateZ(<a>180deg</a>)</i> }</span>
+                        <span><b>.anim li:nth-child(3)</b> { <u>transform</u>: <i>scale(<a>1.1</a>) rotateZ(<a>270deg</a>)</i> }</span>
+                        <span><b>.anim li:nth-child(2):before</b> { <u>animation-delay</u>: <a>0.3s</a> }</span>
+                        <span><b>.anim li:nth-child(4):before</b> { <u>animation-delay</u>: <a>0.6s</a> }</span>
+                        <span><b>.anim li:nth-child(3):before</b> { <u>animation-delay</u>: <a>0.9s</a> }</span>
+                        <span></span>
+                        <span><b>@keyframes anim </b> {</span>
+                        <span>  0%, 10% {</span>
+                        <span><u>      transform</u>:<i> perspective(<a>140px</a>) rotateX(<a>-180deg</a>)</i>;</span>
+                        <span><u>      opacity</u>:<a> 0</a></span>
+                        <span>    } 25%, 75% {</span>
+                        <span><u>      transform</u>:<i> perspective(<a>140px</a>) rotateX(<a>0</a>)</i>;</span>
+                        <span><u>      opacity</u>:<a> 1</a></span>
+                        <span>    } 90%, 100% {</span>
+                        <span><u>      transform</u>:<i> perspective(<a>140px</a>) rotateY(<a>180deg</a>)</i>;</span>
+                        <span><u>      opacity</u>:<a> 0</a></span>
+                        <span>    }</span>
+                        <span>}</span>
+
+                    </code>
+                    <code class="html">
+                        <span><b>&lt;ul <u>id=<i>"anim"</i></u>&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span><b>&lt;/ul&gt</b></span>
+                    </code>
                 </li>
                 <li>
-<code class="css">
-    css
-</code>
-<code class="html">
-    html
-</code>
+                    <code class="css">
+                        <span><b>#anim4 </b> {</span>
+                        <span><u>    position</u>:<i> absolute</i>;</span>
+                        <span><u>    left</u>:<a> 30%</a>;</span>
+                        <span><u>    top</u>:<a> 30%</a>;</span>
+                        <span><u>    height</u>:<a> 40%</a>;</span>
+                        <span><u>    width</u>:<a> 40%</a></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>#anim4::after, #anim4::before</b> {</span>
+                        <span><u>    content</u>:<i> ""</i>;</span>
+                        <span><u>    position</u>:<i> absolute</i>;</span>
+                        <span><u>    left</u>:<a> 0</a>;</span>
+                        <span><u>    top</u>:<a> 0</a>;</span>
+                        <span><u>    width</u>:<a> 100%</a>;</span>
+                        <span><u>    height</u>:<a> 100%</a>;</span>
+                        <span><u>    border-radius</u>:<a> 100%</a>;</span>
+                        <span><u>    background-color</u>:<a class="color"> #f1f1f1</a>;</span>
+                        <span><u>    animation</u>:<a> anim4 1.5s</a> <i>infinite</i>;</span>
+                        <span><u>    opacity</u>:<a> 0</a></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>#anim4::after</b> {</span>
+                        <span><u>    animation-delay</u>:<a> 0.75s</a></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>@keyframes anim4</b> {</span>
+                        <span>    0% {</span>
+                        <span><u>        opacity</u>:<a> 1</a>;</span>
+                        <span><u>        transform</u>:<i> scale(<a>0</a>)</i></span>
+                        <span>    }</span>
+                        <span>    90% {</span>
+                        <span><u>        opacity</u>:<a> 0</a>;</span>
+                        <span><u>        transform</u>:<i> scale(<a>1.3</a>)</i></span>
+                        <span>    }</span>
+                        <span>    100% {</span>
+                        <span><u>        opacity</u>:<a> 0</a></span>
+                        <span>    }</span>
+                        <span>}</span>
+                    </code>
+                    <code class="html">
+                        <span><b>&lt;div <u>class=<i>"anim"</i></u>&gt;&lt;/div&gt;</b></span>
+                    </code>
                 </li>
                 <li>
-<code class="css">
-    css
-</code>
-<code class="html">
-    html
-</code>
+                    <code class="css">
+                        <span><b>.anim</b> {</span>
+                        <span><u>    position</u>:<i> absolute</i>;</span>
+                        <span><u>    left</u>:<a> 0</a>;</span>
+                        <span><u>    top</u>:<a> 50%</a>;</span>
+                        <span><u>    transform</u>:<i> translateY(<a>-50%</a>)</i>;</span>
+                        <span><u>    width</u>:<a> 100%</a>;</span>
+                        <span><u>    list-style</u>:<i> none</i>;</span>
+                        <span><u>    padding</u>:<a> 0</a>;</span>
+                        <span><u>    text-align</u>:<i> center</i>;</span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>.anim li</b> {</span>
+                        <span><u>    display</u>:<i> inline-block</i>;</span>
+                        <span><u>    width</u>:<a> 10px</a>;</span>
+                        <span><u>    height</u>:<a> 10px</a>;</span>
+                        <span><u>    background-color</u>:<a class="color"> #f1f1f1</a>;</span>
+                        <span><u>    border-radius</u>:<a> 100%</a>;</span>
+                        <span><u>    animation</u>:<a> anim5 1.6s</a> <i>ease-in-out infinite</i>;</span>
+                        <span><u>    opacity</u>:<a> 0.5</a></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>.anim li:nth-child(2)</b> {</span>
+                        <span><u>    animation-delay</u>:<a> 0.4s</a></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>.anim li:nth-child(3)</b> {</span>
+                        <span><u>    animation-delay</u>:<a> 0.8s</a></span>
+                        <span>}</span>
+                        <span></span>
+                        <span><b>@keyframes anim5</b> {</span>
+                        <span>    30% {</span>
+                        <span><u>        transform</u>:<i> translateY(<a>-200%</a>) scale(<a>1.2</a>)</i>;</span>
+                        <span><u>        opacity</u>:<a> 1</a></span>
+                        <span>    }</span>
+                        <span>    60% {</span>
+                        <span><u>        transform</u>:<i> translateY(<a>0</a>)</i>;</span>
+                        <span>    }</span>
+                        <span>}</span>
+                    </code>
+                    <code class="html">
+                        <span><b>&lt;ul <u>class=<i>"anim"</i></u>&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span>    <b>&lt;li&gt;&lt;/li&gt;</b></span>
+                        <span><b>&lt;/ul&gt;</b></span>
+                    </code>
                 </li>
                 <li>
-<code class="css">
-    css
-</code>
-<code class="html">
-    html
-</code>
+                    <code class="css">
+                        Work in progeres
+                    </code>
+                    <code class="html">
+                        Work in progeres
+                    </code>
+                </li>
+                <li>
+                    <code class="css">
+                        Work in progeres
+                    </code>
+                    <code class="html">
+                        Work in progeres
+                    </code>
                 </li>
             </ol>
         </div>
