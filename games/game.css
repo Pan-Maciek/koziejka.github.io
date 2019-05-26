@@ -1,0 +1,70 @@
+#logo{
+    transition-duration: .5s;
+    transform: translateY(-100%);
+}
+#topBar ul{
+    transform: translateY(-100%) translateY(-45px);
+}
+#topBar{
+    position: fixed;
+    width: 100%;
+    height: 10px;
+    top:0;
+}
+#topBar:hover ul{
+    transform: translateY(0)
+}
+#topBar:hover #logo{
+    transform: translateY(0)
+}
+#topBar ul:before{
+    content: ".";
+    position: absolute;
+    color: transparent;
+    background-color: inherit;
+    border: #6a1616 solid 10px;
+    border-top: #6a1616 dotted 10px;
+    right: 10px;
+    line-height: 50px;
+    bottom: -70px;
+    width: 50px;
+    transition-duration: .5s;
+}
+#topBar ul:after{
+    content: "<";
+    position: absolute;
+    right: 20px;
+    line-height: 50px;
+    bottom: -60px;
+    width: 50px;
+    border-radius: 100%;
+    transform: rotate(-90deg);
+    transition-duration: .5s
+}
+#topBar ul li:last-child:after{
+    height: 10px;
+    width: 50px;
+    position: absolute;
+    display: block;
+    content: ".";
+    color: transparent;
+    background-color:#ad1111;
+    right: 20px;
+    bottom: -10px
+}
+#topBar:hover ul:after{
+    transform: rotate(90deg) translateY(2px);
+}
+#logo p{
+    position: absolute;
+    font-size: .75em;
+    font-weight: normal;
+    top: 0;
+    margin: 0;
+    width: 60px;
+    transition-duration: .5s
+}
+
+#logo p:hover{
+    transform: translateX(-8px)
+}

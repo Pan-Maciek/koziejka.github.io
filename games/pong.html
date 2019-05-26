@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>8 BIT GAMES</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="../images/logo.gif">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+        
+        <link rel="stylesheet" href="../css/default.css">
+        <link rel="stylesheet" href="game.css">
+        <link rel="stylesheet" href="pong.css">
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/fb.js"></script>
+        <script src="pong.js"></script>
+    </head>
+    <body>
+        <script src="http://connect.facebook.net/en_US/all.js"></script>
+	 <script>
+	   FB.init({
+	     appId  : '1727571490814573',
+	     status : true,
+	     xfbml  : true 
+	   });
+	 </script>
+        
+        <div id="topBar">
+            <h1 id="logo"><a></a><p><a href="http://koziejka.github.io">&lt;</a></p></h1>
+            <ul>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <li><a href="#">MY PROJECTS</a></li>
+                <li><a href="#">DONATE ?</a></li>
+            </ul>
+        </div>
+
+        <div id="game" class="playing">
+            <div id="score"><p id="leftScore">1</p><p id="rightScore">0</p></div>
+            <div id="mid"></div>
+            <div id="menu"><a style="color:red">ONE</a> <span style="color:blue">OR</span> <a style="color:yellow">TWO</a> <span style="color:green">PLAYERS</span>?</div>
+            <canvas></canvas>
+        </div>
+        
+        <footer style="border-color:#9d2424;background-color:#e03d3d">
+            <a class="rotate">a</a>
+            <p>WEBSITE CREATED BY MACIEJ KOZIEJA &copy;</p>
+        </footer>
+        
+        <footer style="border-color:#253a67;background-color:#3b5998">
+            <a style="right:80px">
+            	<div class="hidden"><img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/11990644_678964105573032_247596366899752108_n.jpg?oh=2a848f2fd72eaec02862ee017e2fc391&oe=57C6FAED">Maciej Kozieja</div>f
+    	    </a>
+            <div id="FBinfo">
+                <p style="cursor:pointer" onclick="login()"></p>
+            </div>
+        </footer>
+    </body>
+</html>
